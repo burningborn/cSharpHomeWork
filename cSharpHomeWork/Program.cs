@@ -34,19 +34,20 @@ namespace cSharpHomeWork
             Z.B = a.B * b.A + a.A * b.B;
             return Z;
         }
-        public static Complexus operator /(Complexus a, Complexus b)
+        public static Complexus operator/(Complexus a, Complexus b)
         {
             Complexus Z = new Complexus();
-           //// if ((a.A != 0) && (b.A != 0))
-           // {
-           //     //Z.A = (a.B * b.B - a.A * b.A) / (b.A * b.A + b.B * b.B);
-           //     //Z.B = (b.A * a.B - b.B * a.A) / (b.A * b.A + b.B * b.B);
-           // }
-           // else
-           // {
-           //     //throw new DivideByZeroException();
+            if ((a.A != 0) && (b.A != 0))
+            {
+                Z.A = (a.B * b.B - a.A * b.A) / (b.A * b.A + b.B * b.B);
+                Z.B = (b.A * a.B - b.B * a.A) / (b.A * b.A + b.B * b.B);
                 return Z;
-           // }
+            }
+            else
+            {
+                //throw new DivideByZeroException();
+                return Z;
+            }
         }
         public void Print()
         {
@@ -55,18 +56,6 @@ namespace cSharpHomeWork
 
     }
     
-    struct Auto
-    {
-        public double Length; 
-        public double Clirence;
-        public double engineVolume;
-        public double Power; 
-        public double weelSize;
-        public string Colour;
-        public string gearBox; 
-
-
-    }
 
     class Program
     {       
@@ -82,9 +71,9 @@ namespace cSharpHomeWork
             comp = comp1 - comp2;
             comp.Print();
             comp = comp1 * comp2;
-            comp.Print();
-            //comp = comp1 / comp2;
-            //comp.Print();
+            comp.Print();            
+            comp = comp1 / comp2;
+            comp.Print();            
         }
     }
 }
