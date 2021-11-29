@@ -59,6 +59,7 @@ namespace Classes
             CD_Player temp = new CD_Player { };
             temp.nmbrsOfTracks = one.nmbrsOfTracks + two.nmbrsOfTracks;
             temp.CDLength = one.CDLength + two.CDLength;
+            temp.CdName = one.CdName + " + " + two.CdName;
             return temp;
         }
         public int NmbrsOfTracks
@@ -91,8 +92,14 @@ namespace Classes
         {
 
             string[] trackList = new string[] { "Du hast", "America", "Muter" };
+            string[] TrackList = new string[] { "Yestoday", "Autumn leaves", "Chatanuga Choo - choo" };
             CD_Player Rock = new CD_Player(3, "Rammshtein", trackList);
+            CD_Player Jazz = new CD_Player(3, "Jazz classic", TrackList);
             Rock.Display();
+            Jazz.Display();
+            CD_Player Combi = Rock + Jazz;
+            Console.WriteLine("\nRock + Jazz = ");
+            Combi.Display();
             bool play = false, stop = false;
             Rock.Play(ref play);
             Rock.Stop(ref stop);
@@ -105,6 +112,7 @@ namespace Classes
 
             foreach (CD_Player elem in RandomList)
                 elem.Display();
+
         }
     }
 }
