@@ -179,13 +179,13 @@ namespace cSharpHomeWork
             do
             {
                 Console.WriteLine("\tВыберите действие");
-                Console.WriteLine("\n1. Выствить оценку по предмету (если есть свободные)     - 1");
-                Console.WriteLine("2. Средний балл оценок по предмету - 2");
-                Console.WriteLine("3. Средний балл по всем оценкам    - 3");
-                Console.WriteLine("4. Поиск максимальной оценки       - 4");
-                Console.WriteLine("5. Поиск минимальной оценки        - 5");
-                Console.WriteLine("7. Рандомное заполнение ведомости  - 6");
-                Console.WriteLine("7. Выход                           - 0\n");
+                Console.WriteLine("\n1. Выствить оценку по предмету (если есть свободные) --- 1");
+                Console.WriteLine("2. Средний балл оценок по предмету --------------------- 2");
+                Console.WriteLine("3. Средний балл по всем оценкам    --------------------- 3");
+                Console.WriteLine("4. Поиск максимальной оценки       --------------------- 4");
+                Console.WriteLine("5. Поиск минимальной оценки        --------------------- 5");
+                Console.WriteLine("7. Рандомное заполнение ведомости  --------------------- 6");
+                Console.WriteLine("7. Выход                           --------------------- 0\n");
                 gradeBill(gradeArr, n);
                 key = Convert.ToInt32(Console.ReadLine());
                 switch (key)
