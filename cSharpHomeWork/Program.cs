@@ -68,32 +68,7 @@ namespace cSharpHomeWork
             }
             Console.WriteLine("\n");
         }
-        //static void printArr(int [,] arr)
-        //{
-        //    for (int i = 0; i < arr.GetLength(0); i++)
-        //    {
-        //        for (int j = 0; j < arr.GetLength(1); j++)
-        //        {
-        //           // Console.Write($"{arr[i, j]} ");
-        //            Console.Write("Element ({0},{1}) = {2} ", i, j, arr[i,j]);
-        //        }
-        //        Console.WriteLine();
-        //    }
-        //    Console.WriteLine();
-        //}
-        //static int Average(int[,] arr)
-        //{
-        //    int Average = 0;
-        //    for (int i = 0; i < arr.GetLength(0); i++)
-        //    {
-        //        for (int j = 0; j < arr.GetLength(1); j++)
-        //        {
-        //            Average += arr[i, j];
-        //        }
-        //    }
-        //    Average /= arr.Length;
-        //    return Average;
-        //}
+        
         static int[,] gradeIn(int[,] arr, int m)
         {
             for (int i = 0; i < arr.GetLength(1); i++)
