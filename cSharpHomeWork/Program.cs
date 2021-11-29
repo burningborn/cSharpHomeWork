@@ -21,7 +21,7 @@ namespace cSharpHomeWork
         }
         static void gradeBill(int[,] arr, int n)
         {
-            Console.WriteLine($"\t Ведомость успеваемости по {n} предметам"); ;
+            Console.WriteLine($"\t Ведомость успеваемости по {n} предметам\n"); ;
             Console.Write("Math:        ");
             for (int i = 0; i < arr.GetLength(1); i++)
             {
@@ -184,7 +184,7 @@ namespace cSharpHomeWork
                 Console.WriteLine("3. Средний балл по всем оценкам    --------------------- 3");
                 Console.WriteLine("4. Поиск максимальной оценки       --------------------- 4");
                 Console.WriteLine("5. Поиск минимальной оценки        --------------------- 5");
-                Console.WriteLine("7. Рандомное заполнение ведомости  --------------------- 6");
+                Console.WriteLine("6. Рандомное заполнение ведомости  --------------------- 6");
                 Console.WriteLine("7. Выход                           --------------------- 0\n");
                 gradeBill(gradeArr, n);
                 key = Convert.ToInt32(Console.ReadLine());
@@ -216,7 +216,8 @@ namespace cSharpHomeWork
                         break;
                     case 6:
                         fillArr(gradeArr);
-                        break;
+                        break;       
+                        
                     default:
                         break;
                 }
