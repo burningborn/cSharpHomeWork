@@ -8,11 +8,22 @@ namespace cSharpHomeWork
 {
     class Program
     {
+        static void fillArr(int[,] arr)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    arr[i, j] = rnd.Next(2, 6);
+                }
+            }          
+        }
         static void gradeBill(int[,] arr, int n)
         {
-            Console.WriteLine("\t Ведомость успеваемости ");
+            Console.WriteLine($"\t Ведомость успеваемости по {n} предметам"); ;
             Console.Write("Math:        ");
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < arr.GetLength(1); i++)
             {
                 if (arr[0, i] != 0)
                     Console.Write(arr[0, i] + " ");
@@ -21,7 +32,7 @@ namespace cSharpHomeWork
             }
             Console.WriteLine();
             Console.Write("Programming: ");
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < arr.GetLength(1); i++)
             {
                 if (arr[1, i] != 0)
                     Console.Write(arr[1, i] + " ");
@@ -30,7 +41,7 @@ namespace cSharpHomeWork
             }
             Console.WriteLine();
             Console.Write("Philosophy:  ");
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < arr.GetLength(1); i++)
             {
                 if (arr[2, i] != 0)
                     Console.Write(arr[2, i] + " ");
@@ -39,7 +50,7 @@ namespace cSharpHomeWork
             }
             Console.WriteLine();
             Console.Write("Physics:     ");
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < arr.GetLength(1); i++)
             {
                 if (arr[3, i] != 0)
                     Console.Write(arr[3, i] + " ");
@@ -48,44 +59,44 @@ namespace cSharpHomeWork
             }
             Console.WriteLine();
             Console.Write("English:     ");
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < arr.GetLength(1); i++)
             {
                 if (arr[4, i] != 0)
                     Console.Write(arr[4, i] + " ");
                 else
                     break;
             }
-            Console.WriteLine();
+            Console.WriteLine("\n");
         }
-        static void printArr(int [,] arr)
-        {
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                   // Console.Write($"{arr[i, j]} ");
-                    Console.Write("Element ({0},{1}) = {2} ", i, j, arr[i,j]);
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine();
-        }
-        static int Average(int[,] arr)
-        {
-            int Average = 0;
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                    Average += arr[i, j];
-                }
-            }
-            Average /= arr.Length;
-            return Average;
-        }
+        //static void printArr(int [,] arr)
+        //{
+        //    for (int i = 0; i < arr.GetLength(0); i++)
+        //    {
+        //        for (int j = 0; j < arr.GetLength(1); j++)
+        //        {
+        //           // Console.Write($"{arr[i, j]} ");
+        //            Console.Write("Element ({0},{1}) = {2} ", i, j, arr[i,j]);
+        //        }
+        //        Console.WriteLine();
+        //    }
+        //    Console.WriteLine();
+        //}
+        //static int Average(int[,] arr)
+        //{
+        //    int Average = 0;
+        //    for (int i = 0; i < arr.GetLength(0); i++)
+        //    {
+        //        for (int j = 0; j < arr.GetLength(1); j++)
+        //        {
+        //            Average += arr[i, j];
+        //        }
+        //    }
+        //    Average /= arr.Length;
+        //    return Average;
+        //}
         static int[,] gradeIn(int[,] arr, int m)
         {
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < arr.GetLength(1); i++)
             {
                 if (arr[m, i] == 0)
                 {
@@ -108,28 +119,21 @@ namespace cSharpHomeWork
             }
             Console.WriteLine();
             return arr;
-        }
-        static void action()
-        {
-            
-        }
+        }      
         static int themeAverage(int [,] arr, int m)
         {
-            int average = 0;
-            for (int i = 0; i < 20; i++)
+            int average = 0, devide = 0;
+            for (int i = 0; i < arr.GetLength(1); i++)
             {
                 if (arr[m, i] != 0)
-                    average += arr[m, i];
-                else if (i == 0)
-                {                 
-                    break;
-                }
+                    average += arr[m, i];                                     
                 else
-                {
-                    average /= i;
+                {                  
                     break;
                 }
+                devide++;
             }
+            average /= devide;
             return average;
         }
         static int allAverage(int[,] arr)
@@ -193,19 +197,20 @@ namespace cSharpHomeWork
 
         static void Main(string[] args)
         {
-            const int m = 5, n = 20;           
-            int[,] gradeArr = new int[m, n]; // создали зубчатый массив
-            string[] Themes = new string[] { "Math", "Programming", "Philosophy", "Physics", "English" };           
+            const int m = 5, n = 5;           
+            int[,] gradeArr = new int[m, n]; // создали зубчатый массив           
+            string[] Themes = new string[] { "Math", "Programming", "Philosophy", "Physics", "English" };                   
             int key = 0;
             do
             {
                 Console.WriteLine("\tВыберите действие");
-                Console.WriteLine("\n1. Выствить оценку по предмету     - 1");
+                Console.WriteLine("\n1. Выствить оценку по предмету (если есть свободные)     - 1");
                 Console.WriteLine("2. Средний балл оценок по предмету - 2");
                 Console.WriteLine("3. Средний балл по всем оценкам    - 3");
                 Console.WriteLine("4. Поиск максимальной оценки       - 4");
                 Console.WriteLine("5. Поиск минимальной оценки        - 5");
-                Console.WriteLine("6. Выход                           - 0\n");
+                Console.WriteLine("7. Рандомное заполнение ведомости  - 6");
+                Console.WriteLine("7. Выход                           - 0\n");
                 gradeBill(gradeArr, n);
                 key = Convert.ToInt32(Console.ReadLine());
                 switch (key)
@@ -230,9 +235,12 @@ namespace cSharpHomeWork
                         Console.ReadKey();
                         break;
                     case 5:
-                        Console.WriteLine($"Минимальная оценка по предметам: " + maxGrade(gradeArr));
+                        Console.WriteLine($"Минимальная оценка по предметам: " + minGrade(gradeArr));
                         Console.WriteLine("Нажмите любую клавишу для продолжения");
                         Console.ReadKey();
+                        break;
+                    case 6:
+                        fillArr(gradeArr);
                         break;
                     default:
                         break;
