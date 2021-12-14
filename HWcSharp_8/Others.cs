@@ -6,7 +6,7 @@ using System.Text;
 namespace HWcSharp_8
 {
 
-    class Rectangle : Figures
+    class Rectangle : Figures, IDrawable
     {
         private string name;
         double heigth;
@@ -35,12 +35,17 @@ namespace HWcSharp_8
             Console.WriteLine($" Perimeter of Rectangle = {(heigth + width) * 2}");
             return (heigth + width) * 2;
         }
-        //public override string ToString()
-        //{
-
-        //    return base.ToString();
-        //}
-
+        public void Draw()
+        {
+         for (int i = 0; i < (int)heigth; i++)
+            {
+                for(int j = 0; j < (int)width; j++)
+                {
+                    Console.Write("*");
+                }
+                    Console.Write("\n");
+            }
+        }
     }
     class Circle : Figures
     {
@@ -68,7 +73,7 @@ namespace HWcSharp_8
             return 2 * pi * radius;
         }
     }
-    class Squares : Figures
+    class Squares : Figures, IDrawable
     {
         private string name;
         private double side;
@@ -92,6 +97,17 @@ namespace HWcSharp_8
         {           
             Console.WriteLine($" Perimeter of Square = {side * 4}");
             return side * 4;
+        }
+        public void Draw()
+        {
+            for (int i = 0; i < (int)side; i++)
+            {
+                for (int j = 0; j < (int)side; j++)
+                {
+                    Console.Write("* ");
+                }
+                Console.Write("\n");
+            }
         }
     }
     class Triangle : Figures
