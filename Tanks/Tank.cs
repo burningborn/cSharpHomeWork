@@ -27,7 +27,18 @@ namespace Tanks
             armor = rnd.Next(0, 100);
             mobility = rnd.Next(0, 100);
         }
-
+        public string getAmmunition
+        {
+            get =>Convert.ToString(ammunition);
+        }
+        public string getArmor
+        {
+            get => Convert.ToString(armor);
+        }
+        public string getMobility
+        {
+            get => Convert.ToString(mobility);
+        }
         public static bool operator ^(Tank tankOne, Tank tankTwo)
         {
             int winer = 0;

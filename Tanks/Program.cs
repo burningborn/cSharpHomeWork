@@ -6,8 +6,7 @@ using Tanks;
 namespace Tanks
 {
     class Program
-    {
-
+    {      
         static void Main(string[] args)
         {
             Tank[] T34 = new Tank[5];        
