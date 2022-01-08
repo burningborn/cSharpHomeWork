@@ -21,6 +21,8 @@ namespace NewFraction
             Fractions f3 = f + d;
             Console.Write("f3 - ");
             f3.Display();
+            Console.WriteLine(f == f1);
+            Console.WriteLine(f != f1);
         }
     }
 }

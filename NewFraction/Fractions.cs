@@ -196,7 +196,7 @@ namespace NewFraction
         }
         static public bool operator !=(Fractions one, Fractions two)
         {
-            if (one.numerator != two.numerator || one.denominator != two.denominator)
+            if (one == two)
                 return false;
             else
                 return true;
