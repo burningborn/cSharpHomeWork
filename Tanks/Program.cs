@@ -1,5 +1,5 @@
 ﻿using System;
-//using MyClassLib.WordOfTanks;
+using MyClassLib.WordOfTanks;
 using Tanks;
 
 
