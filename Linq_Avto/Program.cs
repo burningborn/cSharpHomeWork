@@ -25,7 +25,7 @@ namespace Linq_Avto
             Park.Add(Mercedes);
             foreach (var item in Park)
                 Console.WriteLine(item);
-                Console.WriteLine();
+                Console.WriteLine("*************Дороже миллиона*****************");
 
             var selectedAuto = from a in Park // определяем каждый объект из Park как а
                                where a.Price > 1000000 // фильтруем по критерю                              
@@ -33,12 +33,7 @@ namespace Linq_Avto
 
             foreach (var item in selectedAuto)
                 Console.WriteLine(item);
-                Console.WriteLine();
-
-
-            foreach (var item in selectedAuto)
-                Console.WriteLine(item);
-            Console.WriteLine();
+                Console.WriteLine("*************Сортируем по цене*****************");
 
             selectedAuto = from a in Park // определяем каждый объект из Park как а
                            //where a.Price > 1000000 // фильтруем по критерю
@@ -47,7 +42,7 @@ namespace Linq_Avto
 
             foreach (var item in selectedAuto)
                 Console.WriteLine(item);
-                Console.WriteLine();
+                Console.WriteLine("*************Сортируем по мощности*****************");
 
             selectedAuto = from a in Park // определяем каждый объект из Park как а
                            orderby a.Power // сортируем по мощности
