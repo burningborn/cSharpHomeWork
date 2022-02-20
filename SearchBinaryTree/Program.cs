@@ -18,6 +18,7 @@ namespace SearchBinaryTree
             tree.Add(32);
 
             Console.WriteLine(tree);
+
             Console.WriteLine("Перебор всех узлов списка");
             foreach (Node<int> elem in tree)
             {
@@ -27,6 +28,9 @@ namespace SearchBinaryTree
             tree.Remove(tree.root, 34);
             tree.Remove(tree.root, 13);
             tree.Remove(tree.root, 37);
+
+            Console.WriteLine("Минимальный узел: - " + tree.Min(tree.root).Value);
+            Console.WriteLine("Максимальный узел: - " + tree.Max(tree.root).Value);
 
             Console.WriteLine(tree);
 
