@@ -22,8 +22,8 @@ namespace Linq_Avto
         //public IEnumerator GetEnumerator() => Power.GetEnumerator();
         public override string ToString()
         {
-            string form = "";
-           return Convert.ToString($"Mark - {MarkName.PadRight(13)}  Price - {Price},    Power = {Power}");
+            //string form = "";
+           return $"Mark - {MarkName.PadRight(13)}  Price - {Price},    Power = {Power}";
         }
 
         public IEnumerator GetEnumerator()
